@@ -1,0 +1,400 @@
+/* ============================================
+   JOB PATH – Unified styles (from style2)
+   Colors: indigo, cyan, navy, gold
+   ============================================ */
+
+:root {
+  --jp-indigo: #4f46e5;
+  --jp-cyan: #06b6d4;
+  --jp-navy: #0f172a;
+  --jp-gold: #ffb627;
+  --jp-gold-dark: #e6a100;
+  --jp-muted: #64748b;
+  --jp-light: #f8fafc;
+  --jp-border: #e2e8f0;
+  --bs-body-font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-body-color: var(--jp-navy);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  color: var(--jp-navy);
+  background-color: var(--jp-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+/* ---------- Logo ---------- */
+.brand-logo {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--jp-navy);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  color: var(--jp-indigo);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: #fff !important;
+  border-bottom: 1px solid var(--jp-border);
+}
+
+.navbar .nav-link {
+  color: var(--jp-navy) !important;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.9rem !important;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--jp-indigo) !important;
+  background: rgba(79, 70, 229, 0.08);
+}
+
+/* ---------- Buttons ---------- */
+.btn-warning,
+.btn-jp-gold {
+  background-color: var(--jp-gold) !important;
+  border-color: var(--jp-gold) !important;
+  color: var(--jp-navy) !important;
+  font-weight: 600;
+}
+
+.btn-warning:hover,
+.btn-jp-gold:hover {
+  background-color: var(--jp-gold-dark) !important;
+  border-color: var(--jp-gold-dark) !important;
+  color: #fff !important;
+}
+
+.btn-primary {
+  background-color: var(--jp-indigo) !important;
+  border-color: var(--jp-indigo) !important;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca !important;
+  border-color: #4338ca !important;
+}
+
+.btn-outline-primary {
+  color: var(--jp-indigo) !important;
+  border-color: var(--jp-indigo) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--jp-indigo) !important;
+  color: #fff !important;
+}
+
+.btn-outline-light:hover {
+  color: var(--jp-navy) !important;
+}
+
+/* ---------- Hero (Home) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--jp-navy) 0%, #1e3a5f 45%, var(--jp-cyan) 100%);
+  padding-bottom: 4.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  margin-bottom: -2.5rem;
+  color: #fff;
+}
+
+.hero h1 {
+  color: #fff !important;
+  font-weight: 800;
+}
+
+.hero-tagline {
+  color: #c8ff03;
+  font-weight: 500;
+}
+
+/* ---------- Features ---------- */
+.features {
+  padding-top: 5rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.section-intro {
+  max-width: 36rem;
+}
+
+.section-intro h2 {
+  color: var(--jp-navy);
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.15) !important;
+}
+
+.feature-card .card-body {
+  position: relative;
+}
+
+.icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 1.25rem;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--jp-indigo), var(--jp-cyan));
+}
+
+.step-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Dashed path connecting the three steps */
+@media (min-width: 768px) {
+  .path-row {
+    position: relative;
+  }
+  .path-row::before {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    left: 16%;
+    right: 16%;
+    border-top: 4px dashed var(--jp-indigo);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .path-row > div {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* ---------- About page ---------- */
+.about-hero {
+  background: linear-gradient(135deg, var(--jp-navy) 0%, var(--jp-indigo) 60%, var(--jp-cyan) 100%);
+  color: #fff;
+  padding: 4rem 0 3.25rem;
+}
+
+.about-hero h1 {
+  font-weight: 800;
+}
+
+.about-section {
+  padding: 3.25rem 0;
+}
+
+.about-section:nth-of-type(even) {
+  background: #fff;
+}
+
+.about-section h2 {
+  color: var(--jp-indigo);
+  font-weight: 700;
+  margin-bottom: 1.15rem;
+  font-size: 1.65rem;
+}
+
+.about-section h3 {
+  color: var(--jp-navy);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.about-section p,
+.about-section li {
+  color: var(--jp-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-section ol,
+.about-section ul {
+  padding-left: 1.35rem;
+}
+
+.about-section li {
+  margin-bottom: 0.6rem;
+}
+
+.about-section li strong {
+  color: var(--jp-navy);
+}
+
+.value-card {
+  background: #fff;
+  border: 1px solid var(--jp-border);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.value-card:hover {
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
+}
+
+.value-card i {
+  font-size: 1.85rem;
+  color: var(--jp-indigo);
+  margin-bottom: 0.65rem;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--jp-navy), var(--jp-indigo));
+  color: #fff;
+  border-radius: 1.25rem;
+  padding: 2.75rem 2rem;
+  text-align: center;
+}
+
+.cta-box h2 {
+  color: #fff;
+  margin-bottom: 0.65rem;
+}
+
+.cta-box p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.35rem;
+}
+
+/* ---------- Jobs ---------- */
+.job-item .card {
+  border-radius: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-item .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.12) !important;
+}
+
+#filterPills .nav-link {
+  border-radius: 2rem;
+  color: var(--jp-muted);
+  font-weight: 500;
+  border: 1px solid var(--jp-border);
+  background: #fff;
+}
+
+#filterPills .nav-link.active {
+  background: var(--jp-indigo) !important;
+  border-color: var(--jp-indigo) !important;
+  color: #fff !important;
+}
+
+.text-jp-indigo {
+  color: var(--jp-indigo) !important;
+}
+
+/* ---------- Contact ---------- */
+.contact-header {
+  background: linear-gradient(135deg, var(--jp-navy) 0%, var(--jp-indigo) 55%, var(--jp-cyan) 100%);
+  color: #fff;
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.contact-header h1 {
+  font-weight: 800;
+}
+
+.contact-form-section {
+  padding: 3.25rem 0 4rem;
+}
+
+.contact-form-section .form-control:focus {
+  border-color: var(--jp-indigo);
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.18);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--jp-navy);
+  color: #94a3b8;
+  padding: 1.75rem 0;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--jp-gold);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    clip-path: none;
+    margin-bottom: 0;
+    padding-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .features {
+    padding-top: 3rem !important;
+  }
+}
